@@ -1,5 +1,1 @@
 # Python Grammer
-
-## Files
-
-- basic
