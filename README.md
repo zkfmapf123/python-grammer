@@ -30,7 +30,7 @@
 
 - pyhton내에서 import, export 표준
 
-## import 할때 주의 할 점
+### import 할때 주의 할 점
 
 ```
     // bad
