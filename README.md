@@ -58,3 +58,13 @@
 - class.py
 - extends.py
 - method.py
+
+## 6. File
+
+- file.py
+- file_operator.py
+- csv_parse.py
+- tar_file.py
+- temp_file.py
+- template.py
+- subprocess.py

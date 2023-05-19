@@ -1,0 +1,9 @@
+Hi $name
+
+$header
+
+$main
+
+$footer
+
+That's all
