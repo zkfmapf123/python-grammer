@@ -1,19 +1,8 @@
+import subprocess
+
 from src.fileio import index as FileIo
 from src.interaction import index as Interaction
 
-
-def init() -> None:
-    """
-        1. 회원등록
-        2. 회원찾기
-        3. 메뉴선택
-        4. 메뉴추천
-        5. 회원삭제
-    """
-    inter, fileio = Interaction.Interaction(),FileIo.RobertorIO()
-    
-    while True:
-        init_profile(inter,fileio)
 
 def init_profile(inter : Interaction.Interaction, fileio : FileIo.RobertorIO):
     """
@@ -31,18 +20,50 @@ def init_profile(inter : Interaction.Interaction, fileio : FileIo.RobertorIO):
         profile[v] = r
 
     if not fileio.setting_user_info(profile,profile_keys):
-        print("이름이 중복됩니다.")
+        print("[caution] overlap name!!.")
 
     
 
+lookup_table = {
+    "1" : init_profile,
+    "2" : None,
+    "3" : None,
+    "3" : None,
+    "4" : None,
+    "5" : None,
+    "6" : None,
+}
 
 
-    
+def init() -> None:
+    """
+        [x] 회원등록 
+        [ ] 회원찾기
 
+        [ ] Login
+        [ ] 메뉴선택
+        [ ] 메뉴추천
+        [ ] 회원삭제
+        [x] 서비스 종료
+    """
+    inter, fileio = Interaction.Interaction(),FileIo.RobertorIO()
     
-    
-    
-    
+    count = 1
+    while True:
+        subprocess.run("clear")
+        print("################ {} ###############".format(count))
+        count+=1
 
+        num = inter.user_init_input()
+        if num == 9:
+            continue
+
+        if num == 0:
+            print("bye")
+            break
+    
+        subprocess.run("clear")
+        lookup_table.get(str(num))(inter, fileio)
+        
 
 init()
