@@ -2,16 +2,8 @@ class Interaction(object):
 
     init_cmd = """
         what is your order?
-
-        ## NOT LOGIN
         1. register user
         2. find user
-
-        ## LOGIN (required user)
-        3. login user
-        4. select menu
-        5. recommand menu 
-        6. delete user (this)
 
         ## Exit
         0. exit
@@ -40,3 +32,5 @@ class Interaction(object):
     def user_input(self,title: str) -> str:
         user_input = input(title + "\n" + ">> ")
         return user_input
+
+    

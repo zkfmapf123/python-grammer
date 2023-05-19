@@ -29,16 +29,25 @@ class RobertorIO(object):
 
         return True
 
-    def _valid_username(self ,name: str, keys : list[str]) -> bool:
+    def _valid_username(self ,name: str, keys : list[str]):
+
+        find_name = self.find_user(name)
+        if find_name == None:
+            return True
+        
+        return False
+
+    def find_user(self, name: str,keys : list[str]):
         try:
             with open(self.PATHS["user_file_path"], "r") as fs:
                 lines = csv.DictReader(fs, keys)
                 for row in lines:
                     if row["name"] == name:
-                        return False
+                        return row
         except Exception as err:
             raise Exception(err)
-        return True
+        return None
+
 
 
     

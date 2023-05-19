@@ -4,9 +4,9 @@ from src.fileio import index as FileIo
 from src.interaction import index as Interaction
 
 
-def init_profile(inter : Interaction.Interaction, fileio : FileIo.RobertorIO):
+def register_user(inter : Interaction.Interaction, fileio : FileIo.RobertorIO):
     """
-        desc: user setting
+        desc: register user
     """
     profile = {
         "name" : None,
@@ -22,11 +22,29 @@ def init_profile(inter : Interaction.Interaction, fileio : FileIo.RobertorIO):
     if not fileio.setting_user_info(profile,profile_keys):
         print("[caution] overlap name!!.")
 
-    
+def find_user(inter: Interaction.Interaction, fileio : FileIo.RobertorIO):
+    """
+        desc: find user
+    """
 
+    user_name = inter.user_input("what find name? ")
+    user = fileio.find_user(user_name, ("name", "age", "job"))
+
+    if user is None:
+        print("Not Exists")
+    else:
+        print("""
+            name : {}
+            age  : {}
+            job  : {}
+        """.format(user["name"], user["age"], user["job"]))
+
+    inter.user_input("is verify? (press the enter)")
+
+############################################# init #######################################
 lookup_table = {
-    "1" : init_profile,
-    "2" : None,
+    "1" : register_user,
+    "2" : find_user,
     "3" : None,
     "3" : None,
     "4" : None,
@@ -38,12 +56,7 @@ lookup_table = {
 def init() -> None:
     """
         [x] 회원등록 
-        [ ] 회원찾기
-
-        [ ] Login
-        [ ] 메뉴선택
-        [ ] 메뉴추천
-        [ ] 회원삭제
+        [x] 회원찾기
         [x] 서비스 종료
     """
     inter, fileio = Interaction.Interaction(),FileIo.RobertorIO()
