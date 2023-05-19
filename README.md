@@ -68,3 +68,7 @@
 - temp_file.py
 - template.py
 - subprocess.py
+
+## Roboter (mini project 1)
+
+- 질답형 간단한 cli프로젝트
