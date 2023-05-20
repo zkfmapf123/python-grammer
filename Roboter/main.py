@@ -46,7 +46,6 @@ lookup_table = {
     "1" : register_user,
     "2" : find_user,
     "3" : None,
-    "3" : None,
     "4" : None,
     "5" : None,
     "6" : None,
@@ -63,7 +62,7 @@ def init() -> None:
     
     count = 1
     while True:
-        subprocess.run("clear")
+        subprocess.run("clear", check=True)
         print("################ {} ###############".format(count))
         count+=1
 

@@ -72,3 +72,28 @@
 ## Roboter (mini project 1)
 
 - 질답형 간단한 cli프로젝트
+
+## Python Best Practice
+
+- python_best_practice.py (파이썬 사용법)
+- python_concepts.py (Pythonic 하게 코딩하기)
+
+```
+    // python lint tool
+    pip install pep8 | pip install flake8 | pip install pylint
+
+    // if install python3
+    pip3 install --upgrade pip
+
+    // check pip version
+    pip -v
+
+    // register pylint in vscode
+
+    1. install extends pylint
+    2. cmd + p
+    3. "> python: select linter"
+    4. enter > "pylint"
+```
+
+- <a href="">pythonic reference</a>
