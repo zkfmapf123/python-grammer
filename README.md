@@ -96,4 +96,13 @@
     4. enter > "pylint"
 ```
 
-- <a href="">pythonic reference</a>
+## application help
+
+- python 에서 사용되는 외부 라이브러리
+- config.py
+- config_yml.py
+- logger.py
+
+## Email Sender (SMTP)
+
+- 이메일 송신
